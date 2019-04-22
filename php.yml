@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: install php
+      yum: name=php state=latest
+   
+#    - name: install php7
+#     yum: name=php7.X state=latest
+    - name: install php-fpm
+      yum: name=php-fpm state=latest   

@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  remote_user: true
+  become_user: root
+  gather_facts: true
+  become: true
+  tasks:
+    - name: download wordpress 
+      get_url:
+        url: http://wordpress.org/latest.tar.gz
+        dest: /var/www/html/
+   
+    - name: extract wordpress
+      unarchive:
+       src: /var/www/html/latest.tar.gz
+       dest: /var/www/html/
+       copy: no

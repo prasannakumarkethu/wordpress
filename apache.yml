@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  remote_user: root
+  tasks:
+    - name: Install MySQL DB server
+      become: true
+      yum:
+          name: mysql
+          state: latest
